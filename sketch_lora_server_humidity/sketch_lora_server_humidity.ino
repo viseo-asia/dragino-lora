@@ -1,4 +1,4 @@
-/*
+  /*
   LoRa Simple Yun Server :
   Support Devices: LG01. 
   
@@ -113,15 +113,25 @@ void loop()
     {
       recdata( buf, len);
       digitalWrite(led, HIGH);
+      
 //      RH_RF95::printBuffer("request: ", buf, len);
-      Console.print("got request2: ");
+      
+      Console.print("Got Request: ");
       Console.println((char *)buf);
-      Console.println(len);
-      Console.print("RSSI: ");
-      Console.println(rf95.lastRssi(), DEC);
+
+      int f1 = atoi(buf);
+      float f2 = f1/100;
+
+      Console.print("Converted request to Celcius: ");         
+      Console.println(f2);
+     
+//     Console.println(buf);
+//     Console.println(len);
+//     Console.print("RSSI: ");
+//     Console.println(rf95.lastRssi(), DEC);
 
       dataString ="field1=";
-      dataString += "31.00";
+      dataString += f2;
       
       uploadData();
       dataString="";
@@ -150,7 +160,9 @@ void uploadData() {//Upload Data to ThingSpeak
   upload_url += "&";
   upload_url += dataString;
 
+
   Console.println("Call Linux Command to Send Data");
+  Console.println(upload_url);
   Process p;    // Create a process and call it "p", this process will execute a Linux curl command
   p.begin("curl");
   p.addParameter("-k");
@@ -171,4 +183,4 @@ void uploadData() {//Upload Data to ThingSpeak
   Console.println("");
 }
 
-
+  

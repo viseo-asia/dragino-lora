@@ -1,0 +1,22 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "/home/rudi/Downloads/arduino-1.8.5/hardware/arduino/avr/cores/arduino",
+                "/home/rudi/projects/dragino-lora/libraries/DHT_sensor_library",
+                "/home/rudi/projects/dragino-lora/libraries/Adafruit_Unified_Sensor"
+            ],
+            "browse": {
+                "limitSymbolsToIncludedHeaders": false,
+                "path": [
+                    "/home/rudi/Downloads/arduino-1.8.5/hardware/arduino/avr/cores/arduino",
+                    "/home/rudi/projects/dragino-lora/libraries/DHT_sensor_library",
+                    "/home/rudi/projects/dragino-lora/libraries/Adafruit_Unified_Sensor"
+                ]
+            },
+            "intelliSenseMode": "clang-x64"
+        }
+    ],
+    "version": 3
+}

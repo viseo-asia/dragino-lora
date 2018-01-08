@@ -1,0 +1,5 @@
+{
+    "board": "Dragino:avr:unoyun",
+    "port": "/dev/cu.wchusbserial1410",
+    "sketch": "sketch_lora_server.ino"
+}
